@@ -18,17 +18,20 @@ Grid.Inject(Page, Selection);
         crossDomain: true
     });
 
-    const date = '01/01/2020';
-  
     let grid: Grid = new Grid(
         {
             dataSource: data,
             allowPaging: true, 
-            query: new Query().where(
-              'BirthDate', 'greaterthanorequal', date,
-            ),
+            allowFiltering: true,
+            filterSettings: {
+              columns: [
+                {field: 'BirthDate', operator:'greaterthanorequal', value: '1/1/2020', matchCase: true },
+                {field: 'FirstName', operator:'equal', value: 'Nancy', matchCase: true },
+              ]
+            },
             columns: [
-                { field: 'BirthDate', headerText: 'Birth',  textAlign: 'Right' },
+                { field: 'BirthDate' },
+                { field: 'FirstName' },
             ],
             pageSettings: { pageCount: 3 }
         });
