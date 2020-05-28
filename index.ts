@@ -25,9 +25,9 @@ Grid.Inject(Page, Selection);
             allowFiltering: true,
             filterSettings: {
               columns: [
-                {field: 'BirthDate', operator:'greaterthanorequal', value: '1/1/2020', matchCase: true },
-                {field: 'FirstName', operator:'equal', value: 'Nancy', matchCase: true },
-              ]
+                {field: 'BirthDate', operator:'greaterthanorequal', value: '01/01/2020', matchCase: true, predicate: "and" },
+                {field: 'FirstName', operator:'equal', value: 'Nancy', matchCase: true, predicate: "and" },
+              ] 
             },
             columns: [
                 { field: 'BirthDate' },
