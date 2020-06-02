@@ -9,7 +9,7 @@ Grid.Inject(Page, Selection);
 /**
  * RemoteData sample
  */
-let json = "{\r\n \"filterSettings\": {\r\n    \"columns\": [\r\n      { \"field\": \"FirstName\", \"operator\": \"equal\", \"value\": \"VPPZL - Praktick\u00FD zubn\u00ED l\u00E9ka\u0159\", \"predicate\": \"and\" },\r\n      { \"field\": \"BirthDate\", \"operator\": \"greaterthanorequal\", \"value\": \"1\/1\/2020\", \"predicate\": \"and\" },\r\n      { \"field\": \"BirthDate\", \"operator\": \"lessthanorequal\", \"value\": \"6\/31\/2020\", \"predicate\": \"and\" }\r\n    ]\r\n  }\r\n}";
+let json = "{\r\n \"filterSettings\": {\r\n    \"columns\": [\r\n      { \"field\": \"FirstName\", \"operator\": \"equal\", \"value\": \"Nancy", \"predicate\": \"and\" },\r\n      { \"field\": \"BirthDate\", \"operator\": \"greaterthanorequal\", \"value\": \"1\/1\/2020\", \"predicate\": \"and\" },\r\n      { \"field\": \"BirthDate\", \"operator\": \"lessthanorequal\", \"value\": \"6\/31\/2020\", \"predicate\": \"and\" }\r\n    ]\r\n  }\r\n}";
 
 var obj = JSON.parse(json);
 console.log(obj);
