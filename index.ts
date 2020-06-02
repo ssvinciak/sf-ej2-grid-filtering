@@ -9,10 +9,13 @@ Grid.Inject(Page, Selection);
 /**
  * RemoteData sample
  */
+let json = "{\r\n \"filterSettings\": {\r\n    \"columns\": [\r\n      { \"field\": \"FirstName\", \"operator\": \"equal\", \"value\": \"VPPZL - Praktick\u00FD zubn\u00ED l\u00E9ka\u0159\", \"predicate\": \"and\" },\r\n      { \"field\": \"BirthDate\", \"operator\": \"greaterthanorequal\", \"value\": \"1\/1\/2020\", \"predicate\": \"and\" },\r\n      { \"field\": \"BirthDate\", \"operator\": \"lessthanorequal\", \"value\": \"6\/31\/2020\", \"predicate\": \"and\" }\r\n    ]\r\n  }\r\n}";
 
+var obj = JSON.parse(json);
+console.log(obj);
     
     let hostUrl: string = 'https://services.odata.org/V4/Northwind/Northwind.svc/Employees';
-    let data: Object = new DataManager({
+    let data = new DataManager({
         url: hostUrl,
         adaptor: new ODataV4Adaptor() ,
         crossDomain: true
@@ -24,10 +27,8 @@ Grid.Inject(Page, Selection);
             allowPaging: true, 
             allowFiltering: true,
             filterSettings: {
-              columns: [
-                {field: 'BirthDate', operator:'greaterthanorequal', value: '01/01/2020', matchCase: true, predicate: "and" },
-                {field: 'FirstName', operator:'equal', value: 'Nancy', matchCase: true, predicate: "and" },
-              ] 
+              type: 'Excel',
+              ...obj.filterSettings
             },
             columns: [
                 { field: 'BirthDate' },
